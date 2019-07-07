@@ -1,10 +1,18 @@
 {
-  "name": "frontend-project-lvl1",
+  "name": "brain-games",
   "version": "1.0.0",
   "description": "hexlet-project_brain-games",
   "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -17,6 +25,10 @@
   },
   "homepage": "https://github.com/A1RET/frontend-project-lvl1#readme",
   "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
     "eslint": "^6.0.1"
   }
 }
