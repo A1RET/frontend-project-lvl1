@@ -1,46 +1,33 @@
-import readlineSync from 'readline-sync';
-import userName, { randomNum } from '..';
+import engine, { randomNum } from '..';
 
+const game = () => {
+  const description = 'What is the result of the expression?\n';
 
-export default () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What is the result of the expression?\n');
+  const qA = () => {
+    const num1 = randomNum(0, 100);
+    const num2 = randomNum(0, 100);
 
-  const myName = userName();
-
-  const calcGame = () => {
-    let wins = 0;
     const operators = '+-*';
+    const operator = operators[randomNum(0, 2)];
 
-    while (wins < 3) {
-      const num1 = randomNum(0, 100);
-      const num2 = randomNum(0, 100);
-      const operator = operators[randomNum(0, 2)];
+    const question = (`${num1} ${operator} ${num2}`);
 
-      console.log(`Question: ${num1} ${operator} ${num2}`);
+    let answer = 0;
 
-      let correctAnswer = 0;
-
-      if (operator === '+') {
-        correctAnswer = String(num1 + num2);
-      } else if (operator === '-') {
-        correctAnswer = String(num1 - num2);
-      } else {
-        correctAnswer = String(num1 * num2);
-      }
-
-      const answer = readlineSync.question('Your answer: ');
-
-      if (answer !== correctAnswer) {
-        return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\n Let's try again, ${myName}`);
-      }
-
-      console.log('Correct!');
-
-      wins += 1;
+    if (operator === '+') {
+      answer = String(num1 + num2);
+    } else if (operator === '-') {
+      answer = String(num1 - num2);
+    } else {
+      answer = String(num1 * num2);
     }
-    return console.log(`Congratulations, ${myName}!`);
+
+    return [question, answer];
   };
 
-  calcGame();
+  return [description, qA];
+};
+
+export default () => {
+  engine(game());
 };

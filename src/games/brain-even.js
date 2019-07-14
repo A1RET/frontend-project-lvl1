@@ -1,33 +1,19 @@
-import readlineSync from 'readline-sync';
-import userName, { randomNum } from '..';
+import engine, { randomNum } from '..';
 
-export default () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
-  const myName = userName();
+const game = () => {
+  const description = 'Answer "yes" if number even otherwise answer "no".\n';
 
-  const evenGame = () => {
-    let wins = 0;
+  const qA = () => {
+    const question = randomNum(0, 100);
 
-    while (wins < 3) {
-      const num = randomNum(0, 100);
+    const answer = (question % 2 === 0) ? 'yes' : 'no';
 
-      console.log(`Question: ${num}`);
-
-      const answer = readlineSync.question('Your answer: ');
-
-      const correctAnswer = (num % 2 === 0) ? 'yes' : 'no';
-
-      if ((answer !== 'yes' && answer !== 'no') || answer !== correctAnswer) {
-        return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\n Let's try again, ${myName}`);
-      }
-
-      console.log('Correct!');
-
-      wins += 1;
-    }
-    return console.log(`Congratulations, ${myName}!`);
+    return [question, answer];
   };
 
-  evenGame();
+  return [description, qA];
+};
+
+export default () => {
+  engine(game());
 };
