@@ -2,16 +2,16 @@
 Проект "Игры разума"
 
 Игра: "Проверка на четность"
-[![asciicast](https://asciinema.org/a/UX8Ohw8ELlmwi0dlhmBAnp3EP.svg)](https://asciinema.org/a/UX8Ohw8ELlmwi0dlhmBAnp3EP)
+[![asciicast](https://asciinema.org/a/257316.svg)](https://asciinema.org/a/257316)
 
 Игра: "Калькулятор"
-[![asciicast](https://asciinema.org/a/saMeFpKJoeuey8RMunuYAPI32.svg)](https://asciinema.org/a/saMeFpKJoeuey8RMunuYAPI32)
+[![asciicast](https://asciinema.org/a/257317.svg)](https://asciinema.org/a/257317)
 
 Игра "НОД"
-[![asciicast](https://asciinema.org/a/257304.svg)](https://asciinema.org/a/257304)
+[![asciicast](https://asciinema.org/a/257319.svg)](https://asciinema.org/a/257319)
 
 Игра "Арифметическая прогрессия"
-[![asciicast](https://asciinema.org/a/257311.svg)](https://asciinema.org/a/257311)
+[![asciicast](https://asciinema.org/a/257320.svg)](https://asciinema.org/a/257320)
 
 Игра "Простое ли число?"
-[![asciicast](https://asciinema.org/a/257315.svg)](https://asciinema.org/a/257315)
+[![asciicast](https://asciinema.org/a/257321.svg)](https://asciinema.org/a/257321)
