@@ -5,26 +5,17 @@ const description = 'Find the greatest common divisor of given numbers.\n';
 
 const gcd = (num1, num2) => {
   /* Нахождение НОК по Алгоритму Евклида */
-  let frst = 0;/* Большее число (стоит на первом месте дальше в выражении) */
-  let scnd = 0;/* Меньшее число (стоит на втором месте дальше в выражении) */
-
-  if (num1 > num2) {
-    frst = num1;
-    scnd = num2;
-  } else {
-    frst = num2;
-    scnd = num1;
+  let a = num1;
+  let b = num2;
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
   }
 
-  let mod = frst % scnd;
-
-  while (mod !== 0) {
-    const res = scnd % mod;
-    scnd = mod;
-    mod = res;
-  }
-
-  return scnd;
+  return a + b;
 };
 
 const runGame = () => {
