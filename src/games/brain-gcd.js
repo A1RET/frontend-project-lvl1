@@ -28,8 +28,8 @@ const gcd = (num1, num2) => {
 };
 
 const runGame = () => {
-  const num1 = randomNum(0, 100);
-  const num2 = randomNum(0, 100);
+  const num1 = makeRandomNum(0, 100);
+  const num2 = makeRandomNum(0, 100);
 
   const question = `${num1} ${num2}`;
   const answer = String(gcd(num1, num2));

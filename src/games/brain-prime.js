@@ -19,7 +19,7 @@ const isPrime = (n) => {
 };
 
 const runGame = () => {
-  const num = randomNum(1, 100);
+  const num = makeRandomNum(1, 100);
 
   const question = num;
 

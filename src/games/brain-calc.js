@@ -6,10 +6,10 @@ const description = 'What is the result of the expression?\n';
 const operators = '+-*';
 
 const runGame = () => {
-  const num1 = randomNum(0, 100);
-  const num2 = randomNum(0, 100);
+  const num1 = makeRandomNum(0, 100);
+  const num2 = makeRandomNum(0, 100);
 
-  const operator = operators[randomNum(0, operators.length - 1)];
+  const operator = operators[makeRandomNum(0, operators.length - 1)];
 
   const question = (`${num1} ${operator} ${num2}`);
 

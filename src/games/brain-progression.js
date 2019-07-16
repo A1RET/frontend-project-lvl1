@@ -4,9 +4,9 @@ import makeRandomNum from '../utils';
 const description = 'What number is missing in the progression?\n';
 
 const runGame = () => {
-  let num = randomNum(0, 10);
-  const step = randomNum(1, 10);
-  const index = randomNum(1, 10);
+  let num = makeRandomNum(0, 10);
+  const step = makeRandomNum(1, 10);
+  const index = makeRandomNum(1, 10);
   let question = (`${num}`);
   let answer = 0;
 
