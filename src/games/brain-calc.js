@@ -3,7 +3,7 @@ import engine, { randomNum } from '..';
 const game = () => {
   const description = 'What is the result of the expression?\n';
 
-  const qA = () => {
+  const questionAnswer = () => {
     const num1 = randomNum(0, 100);
     const num2 = randomNum(0, 100);
 
@@ -25,7 +25,7 @@ const game = () => {
     return [question, answer];
   };
 
-  return [description, qA];
+  return [description, questionAnswer];
 };
 
 export default () => {

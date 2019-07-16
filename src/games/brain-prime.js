@@ -18,7 +18,7 @@ const game = () => {
     return iter(n, 2);
   };
 
-  const qA = () => {
+  const questionAnswer = () => {
     const num = randomNum(1, 100);
 
     const question = num;
@@ -28,7 +28,7 @@ const game = () => {
     return [question, answer];
   };
 
-  return [description, qA];
+  return [description, questionAnswer];
 };
 
 export default () => {

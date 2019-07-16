@@ -3,7 +3,7 @@ import engine, { randomNum } from '..';
 const game = () => {
   const description = 'What number is missing in the progression?\n';
 
-  const qA = () => {
+  const questionAnswer = () => {
     let num = randomNum(0, 10);
     const step = randomNum(1, 10);
     const index = randomNum(1, 10);
@@ -28,7 +28,7 @@ const game = () => {
     return [question, answer];
   };
 
-  return [description, qA];
+  return [description, questionAnswer];
 };
 
 export default () => {

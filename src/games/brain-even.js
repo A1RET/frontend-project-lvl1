@@ -3,7 +3,7 @@ import engine, { randomNum } from '..';
 const game = () => {
   const description = 'Answer "yes" if number even otherwise answer "no".\n';
 
-  const qA = () => {
+  const questionAnswer = () => {
     const question = randomNum(0, 100);
 
     const answer = (question % 2 === 0) ? 'yes' : 'no';
@@ -11,7 +11,7 @@ const game = () => {
     return [question, answer];
   };
 
-  return [description, qA];
+  return [description, questionAnswer];
 };
 
 export default () => {
