@@ -1,36 +1,33 @@
-import engine, { randomNum } from '..';
+import engine from '..';
+import makeRandomNum from '../utils';
 
-const game = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
 
-  const isPrime = (n) => {
-    const iter = (num, acc) => {
-      if (acc !== num && num % acc === 0) {
-        return 'no';
-      }
+const isPrime = (n) => {
+  const iter = (num, acc) => {
+    if (acc !== num && num % acc === 0) {
+      return 'no';
+    }
 
-      if (acc === num) {
-        return 'yes';
-      }
-      return iter(n, acc + 1);
-    };
-
-    return iter(n, 2);
+    if (acc === num) {
+      return 'yes';
+    }
+    return iter(n, acc + 1);
   };
 
-  const questionAnswer = () => {
-    const num = randomNum(1, 100);
+  return iter(n, 2);
+};
 
-    const question = num;
+const runGame = () => {
+  const num = randomNum(1, 100);
 
-    const answer = isPrime(num);
+  const question = num;
 
-    return [question, answer];
-  };
+  const answer = isPrime(num);
 
-  return [description, questionAnswer];
+  return [question, answer];
 };
 
 export default () => {
-  engine(game());
+  engine(description, runGame);
 };

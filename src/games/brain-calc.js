@@ -1,33 +1,35 @@
-import engine, { randomNum } from '..';
+import engine from '..';
+import makeRandomNum from '../utils';
 
-const game = () => {
-  const description = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?\n';
 
-  const questionAnswer = () => {
-    const num1 = randomNum(0, 100);
-    const num2 = randomNum(0, 100);
+const operators = '+-*';
 
-    const operators = '+-*';
-    const operator = operators[randomNum(0, 2)];
+const runGame = () => {
+  const num1 = randomNum(0, 100);
+  const num2 = randomNum(0, 100);
 
-    const question = (`${num1} ${operator} ${num2}`);
+  const operator = operators[randomNum(0, operators.length - 1)];
 
-    let answer = 0;
+  const question = (`${num1} ${operator} ${num2}`);
 
-    if (operator === '+') {
+  let answer = 0;
+
+  switch (operator) {
+    case '+':
       answer = String(num1 + num2);
-    } else if (operator === '-') {
+      break;
+    case '-':
       answer = String(num1 - num2);
-    } else {
+      break;
+    default:
       answer = String(num1 * num2);
-    }
+      break;
+  }
 
-    return [question, answer];
-  };
-
-  return [description, questionAnswer];
+  return [question, answer];
 };
 
 export default () => {
-  engine(game());
+  engine(description, runGame);
 };

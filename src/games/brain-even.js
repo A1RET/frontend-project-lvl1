@@ -1,21 +1,18 @@
-import engine, { randomNum } from '..';
+import engine from '..';
+import makeRandomNum from '../utils';
 
-const game = () => {
-  const description = 'Answer "yes" if number even otherwise answer "no".\n';
+const description = 'Answer "yes" if number even otherwise answer "no".\n';
 
-  const isEven = num => num % 2 === 0;
+const isEven = num => num % 2 === 0;
 
-  const questionAnswer = () => {
-    const question = randomNum(0, 100);
+const runGame = () => {
+  const question = randomNum(0, 100);
 
-    const answer = isEven(question) ? 'yes' : 'no';
+  const answer = isEven(question) ? 'yes' : 'no';
 
-    return [question, answer];
-  };
-
-  return [description, questionAnswer];
+  return [question, answer];
 };
 
 export default () => {
-  engine(game());
+  engine(description, runGame);
 };
