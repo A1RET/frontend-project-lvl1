@@ -22,8 +22,10 @@ const makeGameData = () => {
     case '-':
       answer = String(num1 - num2);
       break;
-    default:
+    case '*':
       answer = String(num1 * num2);
+      break;
+    default:
       break;
   }
 
