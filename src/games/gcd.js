@@ -3,8 +3,7 @@ import makeRandomNum from '../utils';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const gcd = (num1, num2) => {
-  /* Нахождение НОК по Алгоритму Евклида */
+const makeGcd = (num1, num2) => {
   let a = num1;
   let b = num2;
   while (a !== 0 && b !== 0) {
@@ -23,7 +22,7 @@ const makeGameData = () => {
   const num2 = makeRandomNum(0, 100);
 
   const question = `${num1} ${num2}`;
-  const answer = gcd(num1, num2);
+  const answer = makeGcd(num1, num2);
 
   return [question, answer];
 };
