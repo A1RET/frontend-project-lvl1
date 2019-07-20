@@ -6,11 +6,11 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
 const isPrime = (n) => {
   const iter = (num, acc) => {
     if (acc !== num && num % acc === 0) {
-      return 'no';
+      return false;
     }
 
     if (acc === num) {
-      return 'yes';
+      return true;
     }
     return iter(n, acc + 1);
   };
@@ -21,7 +21,7 @@ const isPrime = (n) => {
 const makeGameData = () => {
   const question = makeRandomNum(1, 100);
 
-  const answer = isPrime(question);
+  const answer = isPrime(question) ? 'yes' : 'no';
 
   return [question, answer];
 };
