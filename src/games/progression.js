@@ -3,7 +3,7 @@ import makeRandomNum from '../utils';
 
 const description = 'What number is missing in the progression?\n';
 
-const runGame = () => {
+const makeGameData = () => {
   let num = makeRandomNum(0, 10);
   const step = makeRandomNum(1, 10);
   const index = makeRandomNum(1, 10);
@@ -29,5 +29,5 @@ const runGame = () => {
 };
 
 export default () => {
-  engine(description, runGame);
+  engine(description, makeGameData);
 };

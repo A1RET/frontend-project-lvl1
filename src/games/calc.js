@@ -5,7 +5,7 @@ const description = 'What is the result of the expression?\n';
 
 const operators = '+-*';
 
-const runGame = () => {
+const makeGameData = () => {
   const num1 = makeRandomNum(0, 100);
   const num2 = makeRandomNum(0, 100);
 
@@ -31,5 +31,5 @@ const runGame = () => {
 };
 
 export default () => {
-  engine(description, runGame);
+  engine(description, makeGameData);
 };

@@ -18,7 +18,7 @@ const isPrime = (n) => {
   return iter(n, 2);
 };
 
-const runGame = () => {
+const makeGameData = () => {
   const num = makeRandomNum(1, 100);
 
   const question = num;
@@ -29,5 +29,5 @@ const runGame = () => {
 };
 
 export default () => {
-  engine(description, runGame);
+  engine(description, makeGameData);
 };
