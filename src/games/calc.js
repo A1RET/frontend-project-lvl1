@@ -13,7 +13,7 @@ const makeGameData = () => {
 
   const question = `${num1} ${operator} ${num2}`;
 
-  let answer = 0;
+  let answer;
 
   switch (operator) {
     case '+':
