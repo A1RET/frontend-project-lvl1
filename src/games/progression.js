@@ -3,27 +3,23 @@ import makeRandomNum from '../utils';
 
 const description = 'What number is missing in the progression?';
 
+const progressionLength = 10;
+
 const makeGameData = () => {
-  let num = makeRandomNum(0, 10);
-  const step = makeRandomNum(1, 10);
-  const index = makeRandomNum(1, 10);
-  let question = `${num}`;
-  let answer = 0;
+  const startNum = makeRandomNum(0, 10);
+  const diff = makeRandomNum(1, 10);
+  const hiddenNumIndex = makeRandomNum(1, 10);
+  let question = '';
 
-  if (index === 1) {
-    question = '.. ';
-    answer = num;
-  }
-
-  for (let i = 2; i <= 10; i += 1) {
-    num += step;
-    if (i === index) {
-      question = `${question} ..`;
-      answer = num;
-    } else {
-      question = `${question} ${num}`;
+  for (let i = 0; i < progressionLength; i += 1) {
+    let nextNum = startNum + diff * i;
+    if (i === hiddenNumIndex) {
+      nextNum = '..';
     }
+    question = `${question} ${nextNum}`;
   }
+
+  const answer = startNum + diff * hiddenNumIndex;
 
   return [question, answer];
 };
