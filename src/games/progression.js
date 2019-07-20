@@ -12,14 +12,14 @@ const makeGameData = () => {
 
   if (index === 1) {
     question = '.. ';
-    answer = String(num);
+    answer = num;
   }
 
   for (let i = 2; i <= 10; i += 1) {
     num += step;
     if (i === index) {
       question = `${question} ..`;
-      answer = String(num);
+      answer = num;
     } else {
       question = `${question} ${num}`;
     }

@@ -17,13 +17,13 @@ const makeGameData = () => {
 
   switch (operator) {
     case '+':
-      answer = String(num1 + num2);
+      answer = num1 + num2;
       break;
     case '-':
-      answer = String(num1 - num2);
+      answer = num1 - num2;
       break;
     case '*':
-      answer = String(num1 * num2);
+      answer = num1 * num2;
       break;
     default:
       break;
