@@ -1,7 +1,7 @@
 import engine from '..';
 import makeRandomNum from '../utils';
 
-const description = 'What number is missing in the progression?\n';
+const description = 'What number is missing in the progression?';
 
 const makeGameData = () => {
   let num = makeRandomNum(0, 10);

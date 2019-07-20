@@ -1,7 +1,7 @@
 import engine from '..';
 import makeRandomNum from '../utils';
 
-const description = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?';
 
 const operators = '+-*';
 
