@@ -11,7 +11,7 @@ const makeGameData = () => {
 
   const operator = operators[makeRandomNum(0, operators.length - 1)];
 
-  const question = (`${num1} ${operator} ${num2}`);
+  const question = `${num1} ${operator} ${num2}`;
 
   let answer = 0;
 
