@@ -17,7 +17,9 @@ export default (description, gameData) => {
     const correctAnswer = String(answer);
 
     if (playerAnswer !== correctAnswer) {
-      return console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\n Let's try again, ${playerName}`);
+      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${playerName}!`)
+      return; 
     }
 
     console.log('Correct!');
