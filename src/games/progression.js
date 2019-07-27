@@ -6,20 +6,20 @@ const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const makeGameData = () => {
-  const startNum = makeRandomNum(0, 10);
+  const startElement = makeRandomNum(0, 10);
   const diff = makeRandomNum(1, 10);
-  const hiddenNumIndex = makeRandomNum(1, 10);
+  const hiddenElementIndex = makeRandomNum(0, progressionLength - 1);
   let question = '';
 
   for (let i = 0; i < progressionLength; i += 1) {
-    let nextNum = startNum + diff * i;
-    if (i === hiddenNumIndex) {
-      nextNum = '..';
+    let nextElement = startElement + diff * i;
+    if (i === hiddenElementIndex) {
+      nextElement = '..';
     }
-    question = `${question} ${nextNum}`;
+    question = `${question} ${nextElement}`.trim();
   }
 
-  const answer = startNum + diff * hiddenNumIndex;
+  const answer = startElement + diff * hiddenElementIndex;
 
   return [question, answer];
 };
