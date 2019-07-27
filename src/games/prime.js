@@ -5,7 +5,7 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
 
 const isPrime = (n) => {
   const iter = (num, acc) => {
-    if (acc !== num && num % acc === 0 || num <= 1) {
+    if ((acc !== num && num % acc === 0) || num <= 1) {
       return false;
     }
 

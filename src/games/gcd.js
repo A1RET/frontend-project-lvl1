@@ -22,7 +22,7 @@ const makeGameData = () => {
   const num2 = makeRandomNum(0, 100);
 
   const question = `${num1} ${num2}`;
-  const answer = makeGcd(num1, num2);
+  const answer = findGcd(num1, num2);
 
   return [question, answer];
 };
