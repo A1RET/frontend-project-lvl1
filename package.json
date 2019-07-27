@@ -22,6 +22,9 @@
     "url": "git+https://github.com/A1RET/frontend-project-lvl1.git"
   },
   "keywords": [
+    "hexlet",
+    "hexlet-project",
+    "games",
     "brain-games"
   ],
   "author": "airet",
