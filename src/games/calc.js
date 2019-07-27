@@ -5,29 +5,26 @@ const description = 'What is the result of the expression?';
 
 const operators = '+-*';
 
-const makeGameData = () => {
-  const num1 = makeRandomNum(0, 100);
-  const num2 = makeRandomNum(0, 100);
-
-  const operator = operators[makeRandomNum(0, operators.length - 1)];
-
-  const question = `${num1} ${operator} ${num2}`;
-
-  let answer;
-
+const makeExpression = (num1, num2, operator) => {
   switch (operator) {
     case '+':
-      answer = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      answer = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      answer = num1 * num2;
-      break;
+      return num1 * num2;
     default:
-      break;
+      return '';
   }
+};
+
+const makeGameData = () => {
+  const a = makeRandomNum(0, 100);
+  const b = makeRandomNum(0, 100);
+  const operator = operators[makeRandomNum(0, operators.length - 1)];
+
+  const question = `${a} ${operator} ${b}`;
+  const answer = makeExpression(a, b, operator);
 
   return [question, answer];
 };
