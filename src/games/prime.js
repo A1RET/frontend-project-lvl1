@@ -9,7 +9,7 @@ const isPrime = (n) => {
       return false;
     }
 
-    if (acc === num) {
+    if (acc > num / 2) {
       return true;
     }
     return iter(n, acc + 1);
